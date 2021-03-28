@@ -80,16 +80,16 @@ public class ListaAluno {
 			inicio = null;
 		}
 		else {
-			nodeAluno aux = auxRemoveFinalRecursivo(inicio, inicio);
-			i = aux.prox.getNome();
-			aux.prox = null;
+			nodeAluno aux = auxRemoveFinalRecursivo(inicio, inicio); //O método retornará o penúltimo elemento da lista
+			i = aux.prox.getNome(); //O nome do ultimo elemento
+			aux.prox = null; // Removendo o ultimo elemento por completo.
 		}
 		return i;
 	}
 	
 	public nodeAluno auxRemoveFinalRecursivo(nodeAluno aux1, nodeAluno aux2) {
 		if(aux1.prox != null) {
-			return auxRemoveFinalRecursivo(aux1.prox, aux1);
+			return auxRemoveFinalRecursivo(aux1.prox, aux1); //Recursividade direta no método de busca
 		}
 		return aux2;
 	}
